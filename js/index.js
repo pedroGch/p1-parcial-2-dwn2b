@@ -68,14 +68,14 @@ let removerTodosLosProductos = document.querySelector("#removeAllProd")
 
 function mostrarTodosLosProductos(arreglo){
     arreglo.forEach((p)=>{
-        let productoObject = new Producto(p.nombre, p.descripcion, p.precio, p.imagen, p.categoria, p.id);
+        let productoObject = new Producto(p.nombre, p.descripcion, p.precio, p.imagen, p.categoria, p.id,p.descripcionlarga);
         contenedorProducto.append(productoObject.imprimirProducto());
     })
 }
 
 function agregarAlCarrito(idProducto){
     let productoArreglo = arregloProductos[idProducto-1]; 
-    let producto = new Producto(productoArreglo.nombre, productoArreglo.descripcion, productoArreglo.precio, productoArreglo.imagen, productoArreglo.categoria, productoArreglo.id);
+    let producto = new Producto(productoArreglo.nombre, productoArreglo.descripcion, productoArreglo.precio, productoArreglo.imagen, productoArreglo.categoria, productoArreglo.id, productoArreglo.descripcionlarga);
     carritoDeCompras.agregarProducto(producto);
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
     
@@ -89,10 +89,13 @@ function agregarAlCarrito(idProducto){
     });
 }
 
-function quitarProductoDelCarrito (idProducto){
+function quitarProductoDelCarrito (idProducto,element){
 
+    let contenedorItem = element.parentNode.parentNode;
+    contenedorItem.remove();
     carritoDeCompras.quitarProductoDelCarrito(idProducto);
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
+    totalCompra ();
 
 }
 

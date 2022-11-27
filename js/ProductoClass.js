@@ -7,7 +7,7 @@ class Producto{
   id;
   descripcionlarga;
 
-  constructor(nombre, descripcion, precio,imagen, categoria, id){
+  constructor(nombre, descripcion, precio,imagen, categoria, id,descripcionlarga){
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.precio = precio;
