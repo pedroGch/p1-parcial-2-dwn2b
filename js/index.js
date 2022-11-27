@@ -12,6 +12,7 @@ let arregloProductos = [
         precio: 1500,
         imagen: './img/prod-1.jpg',
         categoria: 'mandala',
+        descripcionlarga: 'Te presentamos el MEGA PACK IMPRIMIBLE de MANDALAS en formato JPG para que         puedas imprimir y colorear, con 100 diseños exclusivos para potenciar tus habilidades. Incluye 100 diseños únicos de mandalas  imponentes que podrás descargarlos para tenerlos disponibles cuando así lo desees',
     },
     {
         id: 2,
@@ -20,6 +21,7 @@ let arregloProductos = [
         precio: 1500,
         imagen: './img/prod-2.jpg',
         categoria: 'mandala',
+        descripcionlarga: 'Te presentamos el MEGA PACK IMPRIMIBLE de MANDALAS en formato JPG para que         puedas imprimir y colorear, con 100 diseños exclusivos para potenciar tus habilidades. Incluye 100 diseños únicos de mandalas  imponentes que podrás descargarlos para tenerlos disponibles cuando así lo desees',
     },
     {
         id: 3,
@@ -28,6 +30,7 @@ let arregloProductos = [
         precio: 1500,
         imagen: './img/prod-3.jpg',
         categoria: 'mandala',
+        descripcionlarga: 'Te presentamos el MEGA PACK IMPRIMIBLE de MANDALAS en formato JPG para que         puedas imprimir y colorear, con 100 diseños exclusivos para potenciar tus habilidades. Incluye 100 diseños únicos de mandalas  imponentes que podrás descargarlos para tenerlos disponibles cuando así lo desees',
     },
     {
         id: 4,
@@ -36,6 +39,8 @@ let arregloProductos = [
         precio: 1000,
         imagen: './img/prod-4.jpg',
         categoria: 'infantil',
+        descripcionlarga: 'Te presentamos el MEGA PACK IMPRIMIBLE de DIBUJOS INFANTILES en formato JPG para que puedas imprimir y colorear, con 50 diseños exclusivos para potenciar tus habilidades. Incluye 50 diseños únicos de mandalas  imponentes que podrás descargarlos para tenerlos disponibles cuando así lo desees',
+
     },
     {
         id: 5,
@@ -44,6 +49,7 @@ let arregloProductos = [
         precio: 1500,
         imagen: './img/prod-5.jpg',
         categoria: 'mandala',
+        descripcionlarga: 'Te presentamos el MEGA PACK IMPRIMIBLE de MANDALAS en formato JPG para que         puedas imprimir y colorear, con 100 diseños exclusivos para potenciar tus habilidades. Incluye 100 diseños únicos de mandalas  imponentes que podrás descargarlos para tenerlos disponibles cuando así lo desees',
     },
     {
         id: 6,
@@ -52,6 +58,7 @@ let arregloProductos = [
         precio: 1000,
         imagen: './img/prod-6.jpg',
         categoria: 'zentangle',
+        descripcionlarga: 'Te presentamos el MEGA PACK IMPRIMIBLE de DIBUJOS ZENTANGLES en formato JPG para que puedas imprimir y colorear, con 50 diseños exclusivos para potenciar tus habilidades. Incluye 50 diseños únicos de mandalas  imponentes que podrás descargarlos para tenerlos disponibles cuando así lo desees',
     },
 ];
 let contenedorProducto = document.querySelector("#productosTienda");

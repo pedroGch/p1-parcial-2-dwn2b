@@ -5,6 +5,7 @@ class Producto{
   urlImagen;
   categoria;
   id;
+  descripcionlarga;
 
   constructor(nombre, descripcion, precio,imagen, categoria, id){
     this.nombre = nombre;
@@ -13,6 +14,7 @@ class Producto{
     this.urlImagen = imagen;
     this.categoria = categoria;
     this.id = id;
+    this.descripcionlarga = descripcionlarga;
   }
   
   imprimirProducto() {
@@ -86,5 +88,62 @@ class Producto{
 
   imprimirModal(producto){
     
+//este es el div row que contiene las col
+let divContenedorRow = document.createElement("div");
+divContenedorRow.className = "row";
+
+//este es el div col con imagen
+let divColConImagen = document.createElement("div");
+divColConImagen.className = "col-12 col-md-4 py-2";
+
+//esta imagen va dentro del div col
+let imgProducto = document.createElement("img");
+imgProducto.className = "img-fluid  d-block w-100";
+imgProducto.setAttribute("src",`${this.urlImagen}`);
+imgProducto.setAttribute("alt",`mandala con colores vibrantes`);
+
+//este es el div col con texto
+let divColConTexto = document.createElement("div");
+divColConTexto.className = "col-md-7 card-body";
+
+//h3 titulo del detalle
+let tituloDetalle = document.createElement("h3");
+tituloDetalle.className = "card-text fw-bold text-dark-violet fs-2";
+tituloDetalle.innerText = `${this.nombre}`;
+
+//h4 descripCorta del detalle
+let productoDescripcionCorta = document.createElement("h3");
+productoDescripcionCorta.className = "card-text fw-bold text-dark-violet fs-5";
+productoDescripcionCorta.innerText = `${this.descripcion}`;
+
+//p descripcion larga del producto
+let productoDescripcionLarga = document.createElement("p");
+productoDescripcionLarga.className = "fs-3 fw-bold";
+productoDescripcionLarga.innerText = `${this.descripcionlarga}`;
+
+//precio del producto
+let precioProductoDetalle = document.createElement("p");
+precioProductoDetalle.className = "fs-3 fw-bold";
+precioProductoDetalle.innerText = `${this.precio}`;
+
+
+//div col con texto (le agrego los elementos)
+divColConTexto.append(tituloDetalle);
+divColConTexto.append(productoDescripcionCorta);
+divColConTexto.append(productoDescripcionLarga);
+divColConTexto.append(precioProductoDetalle);
+
+
+//div col con imagen (le agrego la imagen)
+divColConImagen.append(imgProducto);
+
+
+//div row que contiene las col (le agrego las dos col)
+divContenedorRow.append(divColConImagen);
+divContenedorRow.append(divColConTexto);
+
+
+return divContenedorRow;
+
   }
 }
