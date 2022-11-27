@@ -68,10 +68,18 @@ function mostrarTodosLosProductos(arreglo){
 
 function agregarAlCarrito(idProducto){
     let productoArreglo = arregloProductos[idProducto-1]; 
-    let producto = new Producto(productoArreglo.nombre, productoArreglo.descripcion, productoArreglo.precio, productoArreglo.imagen, productoArreglo.categoria, productoArreglo.id)
-    
+    let producto = new Producto(productoArreglo.nombre, productoArreglo.descripcion, productoArreglo.precio, productoArreglo.imagen, productoArreglo.categoria, productoArreglo.id);
     carritoDeCompras.agregarProducto(producto);
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
+    
+    let contenedorItemProducto = document.querySelector("#contenedorItemCarrito");
+
+    let misProductos = carritoDeCompras.devolverProductos();
+    contenedorItemProducto.replaceChildren();
+    totalCompra ();
+    misProductos.forEach(element => {
+        contenedorItemProducto.append(carritoDeCompras.mostrarCardProducto(element));
+    });
 }
 
 function quitarProductoDelCarrito (idProducto){
@@ -82,15 +90,18 @@ function quitarProductoDelCarrito (idProducto){
 }
 
 function totalCompra (){
-    cantidadDeProductos.innerText = carritoDeCompras.mostrarPrecioTotalDeLaCompra(); 
+    let tuTotal = document.querySelector(".tuTotal");
+    tuTotal.innerText = carritoDeCompras.mostrarPrecioTotalDeLaCompra(); 
 }
 
-// removeAllProd.addEventListener("click", function(){
-//     carritoDeCompras.quitarTodosLosProducto();
-//     //remover todos los elementos con removeCild
-//     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
+vaciarCarrito.addEventListener("click", function(){
+    carritoDeCompras.quitarTodosLosProducto();
+    document.querySelector("#contenedorItemCarrito").replaceChildren();
 
-// });
+    totalCompra ();
+    cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
+
+});
 
 document.querySelector("select").addEventListener("change", (e) => {
     
@@ -109,5 +120,8 @@ document.querySelector("select").addEventListener("change", (e) => {
     //insertar html aca
     //document.querySelector("#peliculas").replaceChildren(...filtradoHTML);
 });
+
+
+
 
 mostrarTodosLosProductos(arregloProductos);

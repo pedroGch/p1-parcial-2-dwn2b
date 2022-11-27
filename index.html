@@ -39,7 +39,7 @@
                                 d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                         </svg>
                         <span
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-green text-dark" id="monstrarCantidad">
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-green text-dark" id="monstrarCantidad" >
                             0
                             <span class="visually-hidden">Productos en el carrito</span>
                         </span>
@@ -434,39 +434,20 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <!--div que contiene todos los productos-->
-                    <div class="col-12 modal-body d-flex flex-column">
+                    <div class="col-12 modal-body d-flex flex-column" id="contenedorItemCarrito">
                         <!--div de cada producto-->
-                        <div class="row bg-light-violet rounded-3 mb-2 mx-4">
-                            <!--Img-->
-                            <div class="col-2 my-2 align-self-center"><img src="./img/prod-5.jpg" class="card-img-top img-fluid" alt="mandala colores verdes"></div>
-                            <!--Descripcion-->
-                            <div class="col-10 d-flex flex-column"> 
-                                <!--Boton eliminar producto-->
-                                <!-- <button type="button" class="btn-close align-self-end pt-3" data-bs-dismiss="eliminarProducto" aria-label="eliminarProducto"></button> -->
-
-                                <button type="button" class="btn text-dark-violet align-self-end p-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-                                    </svg>
-                                </button>
-                                <h3 class="card-title fs-4 fw-bold">Pack Simpleza</h3>
-                                <p class="fs-3 fw-semibold pb-3">$1500.00</p>                        
-                            </div>
-                        </div>           
+          
                     </div>
                     <div class="col-12 mx-3">
-                        <h2>Precio Total: <!--variable de precio total--></h2>
+                        <h2>Precio Total: <span class="tuTotal"></span></h2>
                     </div>
 
                     <div class="col-12 modal-footer">
                         <div>
-                            <button type="button" class="btn  shadow-sm btn-violet-gradient w-100">Vaciar carrito</button>
+                            <button type="button" class="btn  shadow-sm btn-violet-gradient w-100" id="vaciarCarrito">Vaciar carrito</button>
                         </div>
                         <div>
-                            <button type="button" class="btn  shadow-sm btn-violet-gradient w-100">Cancelar</button>
-                        </div>
-                        <div>
-                            <button type="button" class="btn  shadow-sm btn-violet-gradient w-100">Comprar</button>
+                            <button type="button" class="btn  shadow-sm btn-violet-gradient w-100" >Comprar</button>
                         </div>
                     </div>
                 </div>
