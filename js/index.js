@@ -66,7 +66,7 @@ arregloProductos.forEach((p)=>{
 
 function agregarAlCarrito(idProducto){
     let productoArreglo = arregloProductos[idProducto-1]; 
-    let producto = new Producto(productoArreglo.nombre, productoArreglo.descriproductoArreglocion, productoArreglo.productoArreglorecio, productoArreglo.imagen, productoArreglo.categoria, productoArreglo.id)
+    let producto = new Producto(productoArreglo.nombre, productoArreglo.descripcion, productoArreglo.precio, productoArreglo.imagen, productoArreglo.categoria, productoArreglo.id)
     
     carritoDeCompras.agregarProducto(producto);
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
@@ -77,4 +77,8 @@ function quitarProductoDelCarrito (idProducto){
     carritoDeCompras.quitarProductoDelCarrito(idProducto);
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
 
+}
+
+function totalCompra (){
+    cantidadDeProductos.innerText = carritoDeCompras.mostrarPrecioTotalDeLaCompra(); 
 }

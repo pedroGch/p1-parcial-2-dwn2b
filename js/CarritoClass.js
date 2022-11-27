@@ -30,4 +30,12 @@ class Carrito{
 
     this.productos.splice(this.productos.indexOf(producto), 1);
   }
+
+  mostrarPrecioTotalDeLaCompra(){
+    let total = 0;
+    this.productos.forEach(p => {
+      total += p.precio; 
+    });
+    return total; 
+  }
 }
