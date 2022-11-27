@@ -56,13 +56,15 @@ let arregloProductos = [
 ];
 let contenedorProducto = document.querySelector("#productosTienda");
 let carritoDeCompras = new Carrito();
-let cantidadDeProductos  = document.querySelector("#monstrarCantidad")
+let cantidadDeProductos  = document.querySelector("#monstrarCantidad");
+let removerTodosLosProductos = document.querySelector("#removeAllProd")
 
-arregloProductos.forEach((p)=>{
-    let productoObject = new Producto(p.nombre, p.descripcion, p.precio, p.imagen, p.categoria, p.id);
-    
-    contenedorProducto.append(productoObject.imprimirProducto());
-})
+function mostrarTodosLosProductos(arreglo){
+    arreglo.forEach((p)=>{
+        let productoObject = new Producto(p.nombre, p.descripcion, p.precio, p.imagen, p.categoria, p.id);
+        contenedorProducto.append(productoObject.imprimirProducto());
+    })
+}
 
 function agregarAlCarrito(idProducto){
     let productoArreglo = arregloProductos[idProducto-1]; 
@@ -82,3 +84,30 @@ function quitarProductoDelCarrito (idProducto){
 function totalCompra (){
     cantidadDeProductos.innerText = carritoDeCompras.mostrarPrecioTotalDeLaCompra(); 
 }
+
+// removeAllProd.addEventListener("click", function(){
+//     carritoDeCompras.quitarTodosLosProducto();
+//     //remover todos los elementos con removeCild
+//     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
+
+// });
+
+document.querySelector("select").addEventListener("change", (e) => {
+    
+    let categoria = e.target.value;
+    if (categoria != "todas"){
+        let filtrado = arregloProductos.filter((p) => p.categoria.includes(categoria));
+    
+        contenedorProducto.replaceChildren();
+        mostrarTodosLosProductos(filtrado);
+        
+    }else{
+        contenedorProducto.replaceChildren();
+        mostrarTodosLosProductos(arregloProductos);
+    }
+
+    //insertar html aca
+    //document.querySelector("#peliculas").replaceChildren(...filtradoHTML);
+});
+
+mostrarTodosLosProductos(arregloProductos);

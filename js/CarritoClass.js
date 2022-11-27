@@ -38,4 +38,9 @@ class Carrito{
     });
     return total; 
   }
+
+  quitarTodosLosProducto(){
+    this.productos = []
+  }
+  
 }

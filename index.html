@@ -32,7 +32,7 @@
             <div class="align-self-end d-flex ">
                 <div class="mt-3 mt-md-4 mt-lg-2 ">
 
-                    <button type="button" class="btn text-light position-relative" onclick="totalCompra()">
+                    <button type="button" class="btn text-light position-relative" data-bs-toggle="modal" data-bs-target="#modalCarrito">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                             class="bi bi-cart-fill" viewBox="0 0 16 16">
                             <path
@@ -197,6 +197,16 @@
                     </div>
                 </div>
                 <div class="col-12">
+                    <div class="col-12 my-3">
+                        <label for="generos-pelicula">Categoría:</label>
+                        <select name="generos" id="generos-pelicula">
+                            <option value="">FILTRAR POR CATEGORÍA</option>
+                            <option value="mandala">Mandala</option>
+                            <option value="infantil">Infantil</option>
+                            <option value="zentangle">Zentangle</option>
+                            <option value="todas">Todas</option>
+                        </select>
+                    </div>
                     <div class="row d-flex g-3" id="productosTienda">
                         
                     </div>
@@ -339,7 +349,7 @@
             </div>
         </section>
         <!--seccion formulario-->
-        <section id="seccion-suscripcion" class="py-5">
+        <!-- <section id="seccion-suscripcion" class="py-5">
             <div id="container-formulario" class="row container mx-auto py-5 d-flex">
                 <div class="col-sm-12 col-lg-7 d-flex">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#1f0942"
@@ -413,9 +423,72 @@
 
             </div>
 
-        </section>
+        </section> -->
 
+        <!-- Modal Carrito-->
+        <div class=" modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-fullscreen p-5">
+                <div class="row modal-content">
+                    <div class="col-12 modal-header">
+                        <h2 class="modal-title fw-bold" id="modalCarritoLabel">Carrito</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!--div que contiene todos los productos-->
+                    <div class="col-12 modal-body d-flex flex-column">
+                        <!--div de cada producto-->
+                        <div class="row bg-light-violet rounded-3 mb-2">
+                            <!--Img-->
+                            <div class="col-2 my-2"><img src="./img/prod-5.jpg" class="card-img-top img-fluid" alt="mandala colores verdes"></div>
+                            <!--Descripcion-->
+                            <div class="col-10 d-flex flex-column"> 
+                                <!--Boton eliminar producto-->
+                                <button type="button" class="btn-close align-self-end pt-3" data-bs-dismiss="eliminarProducto" aria-label="eliminarProducto"></button>
+                                <h3 class="card-title fs-4 fw-bold">Pack Simpleza</h3>
+                                <p class="fs-3 fw-semibold">$1500.00</p>                        
+                            </div>
+                        </div>
+                        <div class="row bg-light-violet rounded-3 mb-2">
+                            <!--Img-->
+                            <div class="col-2 my-2"><img src="./img/prod-5.jpg" class="card-img-top img-fluid" alt="mandala colores verdes"></div>
+                            <!--Descripcion-->
+                            <div class="col-10 d-flex flex-column"> 
+                                <!--Boton eliminar producto-->
+                                <button type="button" class="btn-close align-self-end pt-3" data-bs-dismiss="eliminarProducto" aria-label="eliminarProducto"></button>
+                                <h3 class="card-title fs-4 fw-bold">Pack Simpleza</h3>
+                                <p class="fs-3 fw-semibold">$1500.00</p>                        
+                            </div>
+                        </div>
+                        <div class="row bg-light-violet rounded-3 mb-2">
+                            <!--Img-->
+                            <div class="col-2 my-2"><img src="./img/prod-5.jpg" class="card-img-top img-fluid" alt="mandala colores verdes"></div>
+                            <!--Descripcion-->
+                            <div class="col-10 d-flex flex-column"> 
+                                <!--Boton eliminar producto-->
+                                <button type="button" class="btn-close align-self-end pt-3" data-bs-dismiss="eliminarProducto" aria-label="eliminarProducto"></button>
+                                <h3 class="card-title fs-4 fw-bold">Pack Simpleza</h3>
+                                <p class="fs-3 fw-semibold">$1500.00</p>                        
+                            </div>
+                        </div>
+                        
+                    
+                    </div>
+                    <div class="col-12">
+                        <h2>Precio Total: <!--variable de precio total--></h2>
 
+                    </div>
+
+                    <div class="col-12 modal-footer">
+
+                        <div>
+                            <button type="button" class="btn  shadow-sm btn-violet-gradient w-100">Cancelar</button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn  shadow-sm btn-violet-gradient w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Modal -->
         <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-fullscreen p-5">
