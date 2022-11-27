@@ -73,9 +73,7 @@ function agregarAlCarrito(idProducto){
 }
 
 function quitarProductoDelCarrito (idProducto){
-    debugger
-    //let id = idProducto-1;
-    //carritoDeCompras.quitarProductoDelCarrito(id);
+
     carritoDeCompras.quitarProductoDelCarrito(idProducto);
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
 

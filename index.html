@@ -1,125 +1,605 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Programación I | Parcial 2 | APELLIDO/S</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
-        <link rel="shortcut icon" href="favicon.ico" />
-        <link rel="stylesheet" href="./css/styles.css" />
-        <script src="./js/index.js"></script>
-    </head>
-    <body>
-        <header>
-            <h1>Programación I | Parcial 2 | APELLIDO/S | Mi carrito</h1>
-        </header>
-        <main>
-            <div id="minicarrito">
-                <p><span>0</span> ítems agregados</p>
-                <p>$<span>0</span> es el total</p>
-                <p>Filtrar por <a href="#">Categoría 1</a> | <a href="#">Categoría 2</a> | <a href="#">Categoría 3</a></p>
-                <button>Ver carrito</button>
-            </div>
-            <h2>Productos</h2>
-            <!-- Generar el contenido del div#productos dinámicamente -->
-            Ejemplo de como armar el catalogo de productos
-            <div id="productos">
-                <div>
-                    <img src="./img/producto-de-ejemplo.jpeg" alt="Nombre del producto" />
-                    <div>
-                        <h3>Producto</h3>
-                        <p>Descripción del producto</h3>
-                        <p>Precio: $<span>0</span></p>
-                        <p>Categoría</p>
-                        <button>Agregar</button>
-                    </div>
-                </div>
-                <div>
-                    <img src="./img/producto-de-ejemplo.jpeg" alt="Nombre del producto" />
-                    <div>
-                        <h3>Producto</h3>
-                        <p>Descripción del producto</h3>
-                        <p>Precio: $<span>0</span></p>
-                        <p>Categoría</p>
-                        <button>Agregar</button>
-                    </div>
-                </div>
-                <div>
-                    <img src="./img/producto-de-ejemplo.jpeg" alt="Nombre del producto" />
-                    <div>
-                        <h3>Producto</h3>
-                        <p>Descripción del producto</h3>
-                        <p>Precio: $<span>0</span></p>
-                        <p>Categoría</p>
-                        <button>Agregar</button>
-                    </div>
-                </div>
-                <div>
-                    <img src="./img/producto-de-ejemplo.jpeg" alt="Nombre del producto" />
-                    <div>
-                        <h3>Producto</h3>
-                        <p>Descripción del producto</h3>
-                        <p>Precio: $<span>0</span></p>
-                        <p>Categoría</p>
-                        <button>Agregar</button>
-                    </div>
-                </div>
-                <div>
-                    <img src="./img/producto-de-ejemplo.jpeg" alt="Nombre del producto" />
-                    <div>
-                        <h3>Producto</h3>
-                        <p>Descripción del producto</h3>
-                        <p>Precio: $<span>0</span></p>
-                        <p>Categoría</p>
-                        <button>Agregar</button>
-                    </div>
-                </div>
-                <div>
-                    <img src="./img/producto-de-ejemplo.jpeg" alt="Nombre del producto" />
-                    <div>
-                        <h3>Producto</h3>
-                        <p>Descripción del producto</h3>
-                        <p>Precio: $<span>0</span></p>
-                        <p>Categoría</p>
-                        <button>Agregar</button>
-                    </div>
-                </div>
-            </div>
-       
-        </main>
-        <footer>
-            <ul>
-                <li>Profesor Fabrizio Carlassara</li>
-                <li>
-                    <a href="mailto:fabrizio.carlassara@davinci.edu.ar?subject=P1%20-%20Consulta%20-%20DW2[M|T|N][A|B]%20-%20Apellido,%20Nombre" target="_blank">fabrizio.carlassara@davinci.edu.ar</a>
-                </li>
-                <li>Programación 1</li>
-            </ul>
-        </footer>
+<!DOCTYPE html>
+<html lang="es">
 
-        <!-- Generar el div#modalProducto y su contenido dinámicamente 
-        <div class="modal" id="modalProducto">
-            <a class="cerrar" href="javascript:void(0)">X</a>
-            <img src="./img/producto-de-ejemplo.jpeg" alt="Nombre del producto" />
-            <h3>Producto</h3>
-            <p>Descripción</p>
-            <p>Precio: <span>$0</span></p>
-            <p>Categoría</p>
-            <button>Agregar</button>
-        </div> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 2 Scotto</title>
 
-        <!-- Generar el div#modalCarrito y su contenido dinámicamente 
-        <div class="modal" id="modalCarrito">
-            <a class="cerrar" href="javascript:void(0)">X</a>
-            <p>Items: <span>3</span> - Total: <span>$0</span></p>
-            <hr />
-            <ul>
-                <li>Nombre del producto <span>$0</span> <span>0 items</span> <a href="#">Eliminar</a></li>
-                <li>Nombre del producto <span>$0</span> <span>0 items</span> <a href="#">Eliminar</a></li>
-                <li>Nombre del producto <span>$0</span> <span>0 items</span> <a href="#">Eliminar</a></li>
-            </ul>
-            <button>Vaciar</button>
-            <button>Ir al checkout</button>
-        </div> 
-        -->
-    </body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700;800&family=Nunito+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-violet-gradient text-light ">
+        <div class="container-xl container-fluid ">
+            <div class="align-self-start ">
+                <a class="navbar-brand mt-2 p-2 " href="/index.html">
+                    <img src="./img/logo.png" alt="Logo Dhara" class="d-inline-block align-text-top m-2" id="logo">
+                    <h1 class="d-none">Dhara</h1>
+                </a>
+            </div>
+
+            <div class="align-self-end d-flex ">
+                <div class="mt-3 mt-md-4 mt-lg-2 ">
+
+                    <button type="button" class="btn text-light position-relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-cart-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                        </svg>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-green text-dark" id="monstrarCantidad">
+                            0
+                            <span class="visually-hidden">Productos en el carrito</span>
+                        </span>
+                    </button>
+                </div>
+                <div>
+                    <button class="navbar-toggler p-3 mt-2 ms-3" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon navbar-dark"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end text-end p-2" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ">
+                            <a class="nav-link active text-light" aria-current="page" href="/index.html">Inicio</a>
+                            <a class="nav-link text-light" href="#nosotros">Nosotros</a>
+                            <a class="nav-link text-light" href="#productos">Productos</a>
+                            <a class="nav-link text-light" href="#tienda">Tienda</a>
+                            <a class="nav-link text-light" href="#galeria">Galería</a>
+                            <a class="nav-link text-light" href="#seccion-suscripcion">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <header>
+        <!-- carousel-->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active d-flex">
+                    <img src="./img/slide-1.jpg" class="d-block w-100" alt="ilustracion mujer meditando">
+                    <div
+                        class="d-none d-md-block col-10 col-md-4 carousel-caption text-start top-0 pt-5 mt-5 text-dark">
+                        <h2 class="fs-1">Mandalas para colorear</h2>
+                        <p class="fs-5"><strong class="strong-sin-estilos">Packs con cientos de diseños imprimibles para
+                                descargar.</strong></p>
+                        <a href="#galeria" role="button" class="mb-2 btn  shadow-sm btn-violet-gradient btn-md">Conocé
+                            +</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/slide-2.jpg" class="d-block w-100"
+                        alt="ilustracion rostro de mujer con mandala de fondo">
+                    <div
+                        class="d-none d-md-block col-10 col-md-4 carousel-caption text-start top-0 pt-5 mt-5 text-dark">
+                        <h2 class="fs-1">Cursos virtuales</h2>
+                        <p class="fs-5"><strong class="strong-sin-estilos">Con nuestros cursos aprenderás a dibujar tus
+                                propios diseños.</strong></p>
+                        <a href="#galeria" role="button" class="mb-2 btn  shadow-sm btn-violet-gradient btn-md ">Conocé
+                            +</a>
+                    </div>
+                </div>
+                <div class="carousel-item"> 
+                    <img src="./img/slide-3.jpg" class="d-block w-100" alt="ilustracion de mandala">
+                    <div
+                        class="d-none d-md-block col-10 col-md-4 carousel-caption text-start top-0 pt-5 mt-5 text-dark align-self-center">
+                        <h2 class="fs-1">Los mandalas</h2>
+                        <p class="fs-5"><strong class="strong-sin-estilos">
+                                Conocé qué son los mandalas, aprendé a meditar con ellos
+                                y obtené beneficios en tu salud.
+                            </strong></p>
+                        <a href="#galeria" role="button" class="mb-2 btn  shadow-sm btn-violet-gradient btn-md">Conocé
+                            +</a> 
+                    </div>
+                </div> 
+ 
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- sección nosotros-->
+        <section class="container mx-auto row p-4" id="nosotros">
+            <div class="col-12 col-lg-6 mx-auto order-lg-2 my-3 align-self-center">
+                <h2>Nosotros</h2>
+                <p><b>DHARA</b> es un nombre masculino de origen sánscrito que significa fluir.</p>
+                <p>
+                    Dhara es una invitación a conectar con el presente y permanecer en él.
+                    Es fluir al compás de los vaivenes de la vida.
+                </p>
+                <p>
+                    <strong>Es un emprendimiento dedicado al desarrollo y comercialización de cursos sobre técnicas de
+                        creación de mandalas y dibujo zentangle</strong>, paquetes de contenido descargable para poder
+                    colorear y ofrece también la suscripción
+                    a membresías mensuales que permiten acceder a videos de meditaciones guiadas, e
+                    información acerca de los beneficios para la salud que brindan estas prácticas.
+                </p>
+                <p>
+                    <em>
+                        Dhara busca llenarte de energía, te impulsa
+                        fluir, soltar y expandir esa energía
+                        nuevamente al Universo.
+                    </em>
+                </p>
+            </div>
+            <div class="col-12 order-md-1 col-lg-6 mx-auto my-lg-5 align-self-center">
+                <img src="./img/img-nosotros.jpg" alt="persona en posición de meditación sobre una colchoneta en el piso"
+                    class="img-fluid rounded-3 shadow-sm">
+            </div>
+        </section>
+        <!-- sección presentación de productos-->
+        <section class="bg-dark-violet mt-3 py-5 py-sm-2 py-lg-5" id="productos">
+            <div class="row container mx-auto">
+                <div class="col-12 col-lg-6 text-light pt-sm-5 pt-lg-0 align-self-center">
+                    <div class="p-2 p-lg-5 pb-md-0">
+                        <h2 class="text-light pb-md-3 pb-lg-3">Productos</h2>
+
+                        <p><strong>En nuestra tienda encontrarás diseños únicos de mandalas y dibujos zentangle</strong>
+                            en formato JPG para que puedas imprimir y colorear, y potenciar tus habilidades.</p>
+
+
+                        <p> Explorá entre las diferentes opciones según complejidad y específicamente creados para niños
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 my-sm-3 mb-md-5 py-sm-5 pb-md-2 align-self-center">
+                    <img src="./img/img-productos.jpg"
+                        alt="persona pintando un mandala con fibras en un libro para colorear"
+                        class="img-fluid rounded-3 shadow-sm">
+                </div>
+            </div>
+        </section>
+        <!-- sección tienda-->
+        <section id="tienda" class="my-lg-5">
+            <div class="row container mx-auto mt-4">
+                <div class="col-12 my-4 text-center d-flex">
+                    <div class="mx-auto d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#1f0942"
+                            class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                        </svg>
+                        <h2 class="ps-3">Tienda</h2>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row d-flex g-3" id="productosTienda">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 
+        <section class="my-4">
+            <div class="row container mx-auto my-4">
+                <div class="col-12 my-4 text-center">
+                    <h2>Galería</h2>
+                </div>
+                <div class="flex-container ">
+                    <div class="grid-galeria">
+                        <div class="grid-cell cell-a cell-4-2">
+                            <div style="background-image: url('img/ssmb/mario.webp');"></div>
+                        </div>
+                        <div class="grid-cell cell-d cell-2-4">
+                            <div class="fondoVertical" style="background-image: url('img/ssmb/peach.webp');"></div>
+                        </div>
+                        <div class="grid-cell cell-b cell-2-2">
+                            <div style="background-image: url('img/ssmb/luigi.webp');"></div>
+                        </div>
+                        <div class="grid-cell cell-c cell-2-2">
+                            <div style="background-image: url('img/ssmb/yoshi.webp');"></div>
+                        </div>
+                        <div class="grid-cell cell-e cell-3-2">
+                            <div style="background-image: url('img/ssmb/bowser.webp');"></div>
+                        </div>
+                        <div class="grid-cell cell-f cell-3-2">
+                            <div style="background-image: url('img/ssmb/drmario.png');"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- sección galeria masonry-->
+        <section id="galeria" class="mt-5 bg-light-violet p-5 px-0 px-lg-3">
+            <div class="col-12 my-4 text-center d-flex">
+                <div class="d-flex mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#1f0942"
+                        class="bi bi-camera-fill" viewBox="0 0 16 16">
+                        <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                        <path
+                            d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
+                    </svg>
+                    <h2 class="ps-3">Galería Informativa</h2>
+                </div>
+            </div>
+            <div class="row mx-auto mt-5" style=" max-width: 1180px" data-masonry='{"percentPosition": true }'>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="./img/galeria-1.jpg" alt="piedras y arena en jardin zen">
+                        <div class="card-body">
+                            <h3 class="card-title fs-5 fw-semibold">¿Qué significa meditar?</h3>
+                            <p class="card-text">Meditar es la capacidad de focalizar nuestra atención en un solo
+                                pensamiento y abstraernos del
+                                entorno.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+
+                        <img src="./img/galeria-3.jpg" alt="dibujo abstracto coloreado en un papel">
+                        <div class="card-body">
+                            <h3 class="card-title fs-5 fw-semibold">Beneficios del dibujo zentangle</h3>
+                            <p class="card-text"><strong class="strong-sin-estilos">
+                                    Fomentar la creatividad, promover la confianza en sí mismo o
+                                    reducir trastornos de atención y estrés son algunos de los beneficios que tiene la
+                                    práctica del Zentangle.
+                                </strong></p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+
+                        <img src="./img/galeria-2.jpg" alt="mujer meditando sentada en el pasto">
+                        <div class="card-body">
+                            <h3 class="card-title fs-5 fw-semibold">Meditar con mandalas</h3>
+                            <p class="card-text">A nivel físico, meditando con mandalas
+                                experimentamos el aquietamiento mental,
+                                cesa el ruido externo para comenzar a darle
+                                paso a la voz interna. <em>
+                                    Vivenciamos lo que
+                                    llamamos un estado de armonía, de vuelta al
+                                    eje.
+                                </em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title fs-5 fw-semibold">Redes neuronales</h3>
+                            <p class="card-text"><strong>
+                                    La nueva relación que se crea entre grupos de neuronas da como
+                                    resultado el aprendizaje.
+                                </strong>Las redes neuronales se desarrollan como resultado de la continua
+                                activación neuronal que se produce al repetir
+                                acciones una y otra vez.</p>
+                        </div>
+                        <img src="./img/galeria-4.jpg" alt="neuronas cerebrales">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="./img/galeria-5.jpg"
+                            alt="dibujo de silueta de persona meditando con dibujo de los siete chakras">
+                        <div class="card-body">
+                            <h3 class="card-title fs-5 fw-semibold">¿Qué son los mandalas?</h3>
+                            <p class="card-text"><strong>
+                                    Son diagramas simbólicos que en el
+                                    budismo representan la evolución del
+                                    universo respecto a un punto central.
+                                </strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="./img/galeria-6.jpg" alt="lapices de colores sobre mandala dibujado en papel">
+                        <div class="card-body">
+                            <h3 class="card-title fs-5 fw-semibold">Dibujar y colorear mandalas</h3>
+                            <p class="card-text">Es posible alcanzar estados
+                                meditativos contemplando
+                                mandalas, dibujándolos o
+                                coloreándolos. <strong class="strong-sin-estilos">
+                                    Concentrar la atención en patrones y acciones repetitivas propicia la meditación
+                                    conciente, y ayuda a bajar los niveles de estrés.
+                                </strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--seccion formulario-->
+        <section id="seccion-suscripcion" class="py-5">
+            <div id="container-formulario" class="row container mx-auto py-5 d-flex">
+                <div class="col-sm-12 col-lg-7 d-flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#1f0942"
+                        class="bi bi-envelope-heart-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555l-4.2 2.568a2.785 2.785 0 0 0-.051-.105c-.666-1.3-2.363-1.917-3.699-1.25-1.336-.667-3.033-.05-3.699 1.25l-.05.105L.05 3.555ZM11.584 8.91a4.694 4.694 0 0 1-.073.139L16 11.8V4.697l-4.003 2.447c.027.562-.107 1.163-.413 1.767Zm-4.135 3.05c-1.048-.693-1.84-1.39-2.398-2.082L.19 12.856A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144L10.95 9.878c-.559.692-1.35 1.389-2.398 2.081L8 12.324l-.551-.365ZM4.416 8.91c-.306-.603-.44-1.204-.413-1.766L0 4.697v7.104l4.49-2.752a4.742 4.742 0 0 1-.074-.138Z" />
+                        <path d="M8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                    </svg>
+                    <h2 class="ps-3">Suscribite</h2>
+                </div>
+                <div class="col-sm-12  col-lg-7">
+                    <p>Suscribite a nuestro newsletter y recibí de regalo el <b>
+                            Reto de Meditación completo de 21 días de
+                            Deepak Chopra
+                        </b>.</p>
+                </div>
+
+                <div class="col-12 col-lg-7 col-xxl-7">
+                    <form class="row g-3" action="#" method="post">
+                        <div class="col-xxl-6">
+                            <label for="inputNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control border-dark-violet" id="inputNombre"
+                                name="inputNombre" placeholder="Juan" required>
+                        </div>
+                        <div class="col-xxl-6">
+                            <label for="inputApellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control border-dark-violet" id="inputApellido"
+                                name="inputApellido" placeholder="Pérez" required>
+                        </div>
+                        <div class="col-xxl-6">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control border-dark-violet" id="inputEmail"
+                                name="inputEmail" aria-describedby="d-email" required>
+                            <p class="form-text" id="d-email">emaildeejemplo@hotmail.com</p>
+                        </div>
+                        <div class="col-xxl-6">
+                            <label class="form-label" for="inputelefono">Teléfono</label>
+                            <input class="form-control border-dark-violet" type="number" name="inputelefono"
+                                id="inputelefono" placeholder="+ 54 9 11 xxxx xxxx " required>
+
+                        </div>
+                        <div class="mb-3 col-xxl-12">
+                            <label for="inputComentario" class="form-label">Comentario</label>
+                            <textarea class="form-control border-dark-violet" id="inputComentario"
+                                name="inputComentario" rows="5" required></textarea>
+                        </div>
+                        <div class="col-xxl-6">
+                            <label for="inputState" class="form-label">Elegí qué producto te interesa más?</label>
+                            <select id="inputState" name="inputState" class="form-select">
+                                <option selected disabled>Seleccioná una opción</option>
+                                <option>Paquetes de contenido descargable</option>
+                                <option>Meditaciones grabadas</option>
+                                <option>Cursos dibujo de mandalas</option>
+                                <option>Cursos de dibujo zentangle</option>
+                            </select>
+                        </div>
+
+                        <div class="col-xxl-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="checkTerminos" name="checkTerminos">
+                                <label class="form-check-label" for="checkTerminos">
+                                    Acepto Términos y Condiciones
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xxl-12">
+                            <button type="submit" class="btn  shadow-sm btn-violet-gradient">Suscribirme</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Modal -->
+        <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-fullscreen p-5">
+                <div class="row modal-content">
+                    <div class="col-12 modal-header">
+                        <h2 class="modal-title fw-bold" id="exampleModalLabel">Imprimibles</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="col-12 modal-body d-flex">
+                        <div class="row">
+                            <!-- <div class="col-12 col-md-4 py-2"><img src="./img/prod-1.jpg" class=" img-fluid"
+                                    alt="mandala colores vibrantes"></div> -->
+
+                                    <div class="col-12 col-md-4 py-2">
+                                        <div id="carouselProductos" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                              <div class="carousel-item active">
+                                                <img src="./img/prod-1.jpg" class="img-fluid d-block w-100" alt="mandala colores vibrantes">
+                                              </div>
+                                              <div class="carousel-item">
+                                                <img src="./img/slide-prod-2.jpg" class="img-fluid d-block w-100" alt="manos agarrando una ilustracion de mandala para colorear">
+                                              </div>
+                                              <div class="carousel-item">
+                                                <img src="./img/slide-prod-3.jpg" class="img-fluid d-block w-100" alt="hoja con mandala impreso sobre una mesa">
+                                              </div>
+                                              <div class="carousel-item">
+                                                <img src="./img/slide-prod-4.jpg" class="img-fluid d-block w-100" alt="libro de dibujos para colorear">
+                                              </div>
+
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+                                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                              <span class="visually-hidden">Anterior</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                              <span class="visually-hidden">Siguiente</span>
+                                            </button>
+                                          </div>    
+
+                                    </div>
+                            <div class="col-md-7 card-body">
+
+                                <div>
+                                    <h3 class="card-text fw-bold text-dark-violet fs-2">Pack Armonía</h3>
+                                    <h4 class="card-text fw-bold text-dark-violet fs-5">100 mandalas imprimibles</h4>
+                                    <p>
+                                        <strong class="strong-sin-estilos">
+                                            Te presentamos el MEGA PACK IMPRIMIBLE de MANDALAS en formato JPG para que
+                                            puedas imprimir y colorear, con 100 diseños exclusivos para potenciar tus
+                                            habilidades.
+                                        </strong>
+                                        Incluye 100 diseños únicos de mandalas imponentes que podrás descargarlos para
+                                        tenerlos disponibles cuando así lo desees.
+                                    </p>
+                                    <p class="fs-3 fw-bold">$1500.00</p>
+                                    <a href="#" class="text-dark-violet text-decoration-underline">
+                                        <p class=""><small>Ver cuotas disponibles</small></p>
+                                    </a>
+                                </div>
+
+                                <div class="">
+                                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                                    aria-controls="flush-collapseOne">
+                                                    Ver métodos de pago
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                                aria-labelledby="flush-headingOne"
+                                                data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <img class="img-fluid" src="./img/pagos.jpg"
+                                                        alt="Mercado pago, mastercard, visa, american express, tarjeta naranja, pago facil, rapipago, transferencia bancaria, efectivo o acordar con el vendedor">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingTwo">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                                    aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                    Ver formas de envío
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="flush-headingTwo"
+                                                data-bs-parent="#accordionFlushExample">
+                                                <img src="./img/envio.jpg" class="img-fluid"
+                                                    alt="Correo Argentino, Correo Privado, Retiro en sucursal, Acordar con el vendedor">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 modal-footer">
+
+                        <div>
+                            <button type="button" class="btn  shadow-sm btn-violet-gradient w-100">Agregar al
+                                carrito</button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn  shadow-sm btn-violet-gradient w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </main>
+
+
+
+
+    <footer class="bg-dark-violet py-lg-3">
+        <div class="row container text-light mx-auto p-3 d-flex">
+            <div class="col-12 col-lg-4 p-2"><img class="mx-auto d-block img-fluid" src="./img/foto-ro.jpg"
+                    alt="foto Rocío"></div>
+            <div class="col-12 col-lg-5 datos align-self-center datos-footer">
+                <ul>
+                    <li><b>Alumna:</b> Rocío B. Scotto</li>
+                    <li><b>Edad:</b> 32 años</li>
+                    <li><b>Email:</b> rocio.scotto@davinci.edu.ar</li>
+                    <li><b>Comisión:</b> DWN2BV - <b>Parcial:</b> 2</li>
+                    <li><b>Materia:</b> Integración con Dispositivos Móbiles</li>
+                    <li><b>Prof:</b> Jorge Pérez</li>
+                </ul>
+
+            </div>
+            <div class="col-8 col-lg-3 redes-sociales mx-auto align-self-center mb-4">
+                <div class="row iconos-redes">
+                    <div class="col-6 text-center">
+                        <a href="https://github.com/roscotto">
+                            <div class="github"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                                    fill="whitesmoke" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg></div> <span class="d-none">Github</span>
+                        </a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a href="https://www.instagram.com/ro_scotto/">
+                            <div class="instagram"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                                    fill="whitesmoke" class="bi bi-instagram" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                </svg></div>
+                            <span class="d-none">Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+        async></script>
+
+    <script src="./js/CarritoClass.js"></script>
+    <script src="./js/ProductoClass.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
 </html>
