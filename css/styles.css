@@ -167,7 +167,7 @@ textarea {
     }
 
     .datos-footer ul {
-        list-style-type: circle;
+        list-style-type: none;
     }
 }
 
