@@ -57,13 +57,13 @@ class Producto{
     //boton de compra del producto
     let botonCompraCardBody = document.createElement("button");
     botonCompraCardBody.className = "btn shadow-sm btn-violet-gradient w-100 mb-3 addCart";
-    botonCompraCardBody.innerText = "agregar al carrito";
+    botonCompraCardBody.innerText = "Agregar al carrito";
     botonCompraCardBody.setAttribute("onclick",`agregarAlCarrito(${this.id})`);
 
 
     let botonDetalleCardBody = document.createElement("button");
     botonDetalleCardBody.className = "btn shadow-sm btn-violet-gradient w-100";
-    botonDetalleCardBody.innerText = "detalle";
+    botonDetalleCardBody.innerText = "Ver detalle";
     botonDetalleCardBody.setAttribute("data-bs-toggle","modal");
     botonDetalleCardBody.setAttribute("data-bs-target","#exampleModal");
     botonDetalleCardBody.setAttribute("onclick",`mostrarModalDetalle(${this.id})`);
@@ -94,17 +94,17 @@ class Producto{
 
     //este es el div col con imagen
     let divColConImagen = document.createElement("div");
-    divColConImagen.className = "col-12 col-md-4 py-2";
+    divColConImagen.className = "col-12 col-md-3 py-2";
 
     //esta imagen va dentro del div col
     let imgProducto = document.createElement("img");
-    imgProducto.className = "img-fluid  d-block w-100";
+    imgProducto.className = "img-fluid mx-auto";
     imgProducto.setAttribute("src",`${producto.imagen}`);
     imgProducto.setAttribute("alt",`mandala con colores vibrantes`);
 
     //este es el div col con texto
     let divColConTexto = document.createElement("div");
-    divColConTexto.className = "col-md-7 card-body";
+    divColConTexto.className = "col-md-8 card-body p-5";
 
     //h3 titulo del detalle
     let tituloDetalle = document.createElement("h3");
@@ -118,7 +118,7 @@ class Producto{
 
     //p descripcion larga del producto
     let productoDescripcionLarga = document.createElement("p");
-    productoDescripcionLarga.className = "fs-3 fw-bold";
+    productoDescripcionLarga.className = "fs-5";
     productoDescripcionLarga.innerText = `${producto.descripcionlarga}`;
 
     //precio del producto
@@ -127,8 +127,8 @@ class Producto{
     precioProductoDetalle.innerText = `$ ${producto.precio}`;
 
     let botonCompraCardBody = document.createElement("button");
-    botonCompraCardBody.className = "btn shadow-sm btn-violet-gradient w-100 mb-3 addCart";
-    botonCompraCardBody.innerText = "agregar al carrito";
+    botonCompraCardBody.className = "btn shadow-sm btn-violet-gradient  my-3 addCart";
+    botonCompraCardBody.innerText = "Agregar al carrito";
     botonCompraCardBody.setAttribute("onclick",`agregarAlCarrito(${this.id})`);
 
     //div col con texto (le agrego los elementos)

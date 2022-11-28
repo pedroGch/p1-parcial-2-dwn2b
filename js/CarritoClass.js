@@ -48,7 +48,7 @@ class Carrito{
       //este es el div del card
       
       var divContenedorProducto = document.createElement("div");
-      divContenedorProducto.className = "row bg-light-violet rounded-3 mb-2 mx-4";
+      divContenedorProducto.className = "row bg-light-violet rounded-3 mb-2 mx-5";
   
       //este es el div de la imagen
       let divContenedorImagen = document.createElement("div");
@@ -63,11 +63,11 @@ class Carrito{
   
       //este es el div del card
       let divDescript = document.createElement("div");
-      divDescript.className = "col-10 d-flex flex-column";
+      divDescript.className = "col-10 d-flex flex-column px-5";
   
       //boton de compra del producto
       let botonEliminarProducto = document.createElement("button");
-      botonEliminarProducto.className = "btn text-dark-violet align-self-end p-2";
+      botonEliminarProducto.className = "btn text-dark-violet align-self-end p-2 pt-3";
       botonEliminarProducto.setAttribute("onclick",`quitarProductoDelCarrito(${p.id}, this) `);
       botonEliminarProducto.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
