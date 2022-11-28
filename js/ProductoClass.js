@@ -127,12 +127,17 @@ class Producto{
     precioProductoDetalle.className = "fs-3 fw-bold";
     precioProductoDetalle.innerText = `$ ${producto.precio}`;
 
+    let botonCompraCardBody = document.createElement("button");
+    botonCompraCardBody.className = "btn shadow-sm btn-violet-gradient w-100 mb-3 addCart";
+    botonCompraCardBody.innerText = "agregar al carrito";
+    botonCompraCardBody.setAttribute("onclick",`agregarAlCarrito(${this.id})`);
 
     //div col con texto (le agrego los elementos)
     divColConTexto.append(tituloDetalle);
     divColConTexto.append(productoDescripcionCorta);
     divColConTexto.append(productoDescripcionLarga);
     divColConTexto.append(precioProductoDetalle);
+    divColConTexto.append(botonCompraCardBody);
 
 
     //div col con imagen (le agrego la imagen)
