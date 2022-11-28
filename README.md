@@ -7,7 +7,7 @@
 
 ## Observaciones
 
-Inserten cualquier comentario u observacion que quieran mencionar.
+Link a sitio publicado en GitHub Pages: https://pedrogch.github.io/index.html.
 
 ## Requisitos obligatorios
 
