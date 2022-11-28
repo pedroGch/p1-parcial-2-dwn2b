@@ -145,8 +145,7 @@ document.querySelector("select").addEventListener("change", (e) => {
         mostrarTodosLosProductos(arregloProductos);
     }
 
-    //insertar html aca
-    //document.querySelector("#peliculas").replaceChildren(...filtradoHTML);
+    
 });
 
 

@@ -81,7 +81,6 @@ class Producto{
     divCard.append(divCardBody);
     
     divContenedorProducto.append(divCard)
-    console.log(divContenedorProducto)
     
     return divContenedorProducto;      
 

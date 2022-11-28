@@ -199,4 +199,12 @@ textarea {
         justify-content: start;
 
     }
+
+    header {
+        background: linear-gradient(90deg, #BCAEC8, #DEC9E8);
+    } 
+    #carouselExampleCaptions {
+        max-width: 1920px;
+        
+    }
 }
