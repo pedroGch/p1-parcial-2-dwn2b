@@ -52,7 +52,7 @@ class Producto{
     //precio del producto
     let precioCardBody = document.createElement("p");
     precioCardBody.className = "fs-3 fw-semibold";
-    precioCardBody.innerText = `${this.precio}`;
+    precioCardBody.innerText = `$ ${this.precio}`;
 
     //boton de compra del producto
     let botonCompraCardBody = document.createElement("button");
@@ -66,6 +66,7 @@ class Producto{
     botonDetalleCardBody.innerText = "detalle";
     botonDetalleCardBody.setAttribute("data-bs-toggle","modal");
     botonDetalleCardBody.setAttribute("data-bs-target","#exampleModal");
+    botonDetalleCardBody.setAttribute("onclick",`mostrarModalDetalle(${this.id})`);
     
     //card body
     divCardBody.append(tituloCardBody);
@@ -88,62 +89,62 @@ class Producto{
 
   imprimirModal(producto){
     
-//este es el div row que contiene las col
-let divContenedorRow = document.createElement("div");
-divContenedorRow.className = "row";
+    //este es el div row que contiene las col
+    let divContenedorRow = document.createElement("div");
+    divContenedorRow.className = "row";
 
-//este es el div col con imagen
-let divColConImagen = document.createElement("div");
-divColConImagen.className = "col-12 col-md-4 py-2";
+    //este es el div col con imagen
+    let divColConImagen = document.createElement("div");
+    divColConImagen.className = "col-12 col-md-4 py-2";
 
-//esta imagen va dentro del div col
-let imgProducto = document.createElement("img");
-imgProducto.className = "img-fluid  d-block w-100";
-imgProducto.setAttribute("src",`${this.urlImagen}`);
-imgProducto.setAttribute("alt",`mandala con colores vibrantes`);
+    //esta imagen va dentro del div col
+    let imgProducto = document.createElement("img");
+    imgProducto.className = "img-fluid  d-block w-100";
+    imgProducto.setAttribute("src",`${producto.imagen}`);
+    imgProducto.setAttribute("alt",`mandala con colores vibrantes`);
 
-//este es el div col con texto
-let divColConTexto = document.createElement("div");
-divColConTexto.className = "col-md-7 card-body";
+    //este es el div col con texto
+    let divColConTexto = document.createElement("div");
+    divColConTexto.className = "col-md-7 card-body";
 
-//h3 titulo del detalle
-let tituloDetalle = document.createElement("h3");
-tituloDetalle.className = "card-text fw-bold text-dark-violet fs-2";
-tituloDetalle.innerText = `${this.nombre}`;
+    //h3 titulo del detalle
+    let tituloDetalle = document.createElement("h3");
+    tituloDetalle.className = "card-text fw-bold text-dark-violet fs-2";
+    tituloDetalle.innerText = `${producto.nombre}`;
 
-//h4 descripCorta del detalle
-let productoDescripcionCorta = document.createElement("h3");
-productoDescripcionCorta.className = "card-text fw-bold text-dark-violet fs-5";
-productoDescripcionCorta.innerText = `${this.descripcion}`;
+    //h4 descripCorta del detalle
+    let productoDescripcionCorta = document.createElement("h3");
+    productoDescripcionCorta.className = "card-text fw-bold text-dark-violet fs-5";
+    productoDescripcionCorta.innerText = `${producto.descripcion}`;
 
-//p descripcion larga del producto
-let productoDescripcionLarga = document.createElement("p");
-productoDescripcionLarga.className = "fs-3 fw-bold";
-productoDescripcionLarga.innerText = `${this.descripcionlarga}`;
+    //p descripcion larga del producto
+    let productoDescripcionLarga = document.createElement("p");
+    productoDescripcionLarga.className = "fs-3 fw-bold";
+    productoDescripcionLarga.innerText = `${producto.descripcionlarga}`;
 
-//precio del producto
-let precioProductoDetalle = document.createElement("p");
-precioProductoDetalle.className = "fs-3 fw-bold";
-precioProductoDetalle.innerText = `${this.precio}`;
-
-
-//div col con texto (le agrego los elementos)
-divColConTexto.append(tituloDetalle);
-divColConTexto.append(productoDescripcionCorta);
-divColConTexto.append(productoDescripcionLarga);
-divColConTexto.append(precioProductoDetalle);
+    //precio del producto
+    let precioProductoDetalle = document.createElement("p");
+    precioProductoDetalle.className = "fs-3 fw-bold";
+    precioProductoDetalle.innerText = `$ ${producto.precio}`;
 
 
-//div col con imagen (le agrego la imagen)
-divColConImagen.append(imgProducto);
+    //div col con texto (le agrego los elementos)
+    divColConTexto.append(tituloDetalle);
+    divColConTexto.append(productoDescripcionCorta);
+    divColConTexto.append(productoDescripcionLarga);
+    divColConTexto.append(precioProductoDetalle);
 
 
-//div row que contiene las col (le agrego las dos col)
-divContenedorRow.append(divColConImagen);
-divContenedorRow.append(divColConTexto);
+    //div col con imagen (le agrego la imagen)
+    divColConImagen.append(imgProducto);
 
 
-return divContenedorRow;
+    //div row que contiene las col (le agrego las dos col)
+    divContenedorRow.append(divColConImagen);
+    divContenedorRow.append(divColConTexto);
+
+
+    return divContenedorRow;
 
   }
 }

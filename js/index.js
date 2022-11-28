@@ -64,7 +64,8 @@ let arregloProductos = [
 let contenedorProducto = document.querySelector("#productosTienda");
 let carritoDeCompras = new Carrito();
 let cantidadDeProductos  = document.querySelector("#monstrarCantidad");
-let removerTodosLosProductos = document.querySelector("#removeAllProd")
+let removerTodosLosProductos = document.querySelector("#removeAllProd");
+let tuTotalCantidad = document.querySelector("#tuTotalCantidad");
 
 function mostrarTodosLosProductos(arreglo){
     arreglo.forEach((p)=>{
@@ -78,6 +79,7 @@ function agregarAlCarrito(idProducto){
     let producto = new Producto(productoArreglo.nombre, productoArreglo.descripcion, productoArreglo.precio, productoArreglo.imagen, productoArreglo.categoria, productoArreglo.id, productoArreglo.descripcionlarga);
     carritoDeCompras.agregarProducto(producto);
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
+    tuTotalCantidad.innerText = carritoDeCompras.cantidadDeProductos(); 
     
     let contenedorItemProducto = document.querySelector("#contenedorItemCarrito");
 
@@ -92,9 +94,11 @@ function agregarAlCarrito(idProducto){
 function quitarProductoDelCarrito (idProducto,element){
 
     let contenedorItem = element.parentNode.parentNode;
+    
     contenedorItem.remove();
     carritoDeCompras.quitarProductoDelCarrito(idProducto);
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
+    tuTotalCantidad.innerText = carritoDeCompras.cantidadDeProductos(); 
     totalCompra ();
 
 }
@@ -110,8 +114,22 @@ vaciarCarrito.addEventListener("click", function(){
 
     totalCompra ();
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
+    tuTotalCantidad.innerText = carritoDeCompras.cantidadDeProductos(); 
 
 });
+
+function mostrarModalDetalle(idProd){
+    let producto = null; 
+
+    arregloProductos.forEach(element => {
+      if (element.id == idProd){
+        producto = element;
+      }
+    });
+    let productoObject = new Producto(producto.nombre, producto.descripcion, producto.precio, producto.imagen, producto.categoria, producto.id,producto.descripcionlarga);
+    document.querySelector("#contenedorDescripLargo").replaceChildren();
+    document.querySelector("#contenedorDescripLargo").append(productoObject.imprimirModal(producto));
+}
 
 document.querySelector("select").addEventListener("change", (e) => {
     
