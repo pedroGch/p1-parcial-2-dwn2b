@@ -78,6 +78,9 @@ function agregarAlCarrito(idProducto){
     let productoArreglo = arregloProductos[idProducto-1]; 
     let producto = new Producto(productoArreglo.nombre, productoArreglo.descripcion, productoArreglo.precio, productoArreglo.imagen, productoArreglo.categoria, productoArreglo.id, productoArreglo.descripcionlarga);
     carritoDeCompras.agregarProducto(producto);
+
+    actualizarLocalStorage();
+
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
     tuTotalCantidad.innerText = carritoDeCompras.cantidadDeProductos(); 
     
@@ -97,6 +100,9 @@ function quitarProductoDelCarrito (idProducto,element){
     
     contenedorItem.remove();
     carritoDeCompras.quitarProductoDelCarrito(idProducto);
+
+    actualizarLocalStorage();
+
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
     tuTotalCantidad.innerText = carritoDeCompras.cantidadDeProductos(); 
     totalCompra ();
@@ -113,6 +119,9 @@ vaciarCarrito.addEventListener("click", function(){
     document.querySelector("#contenedorItemCarrito").replaceChildren();
 
     totalCompra ();
+
+    actualizarLocalStorage();
+
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
     tuTotalCantidad.innerText = carritoDeCompras.cantidadDeProductos(); 
 
@@ -130,6 +139,15 @@ function mostrarModalDetalle(idProd){
     document.querySelector("#contenedorDescripLargo").replaceChildren();
     document.querySelector("#contenedorDescripLargo").append(productoObject.imprimirModal(producto));
 }
+
+//actualizar
+function actualizarLocalStorage() {
+    // localStorage.setItem("productosCarrito", JSON.stringify(carritoDeCompras.devolverProductos()));
+    localStorage.setItem("productosCarrito", JSON.stringify(carritoDeCompras));
+}
+
+
+
 
 document.querySelector("select").addEventListener("change", (e) => {
     
@@ -152,3 +170,4 @@ document.querySelector("select").addEventListener("change", (e) => {
 
 
 mostrarTodosLosProductos(arregloProductos);
+
