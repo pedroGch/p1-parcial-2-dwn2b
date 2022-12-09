@@ -146,7 +146,9 @@ function actualizarLocalStorage() {
     localStorage.setItem("productosCarrito", JSON.stringify(carritoDeCompras));
 }
 
-
+function mostrarLocalStorage() {
+    return JSON.parse(localStorage.getItem("productosCarrito"));
+}
 
 
 document.querySelector("select").addEventListener("change", (e) => {
@@ -171,3 +173,12 @@ document.querySelector("select").addEventListener("change", (e) => {
 
 mostrarTodosLosProductos(arregloProductos);
 
+if(mostrarLocalStorage() != null) {
+
+    let productosExistentes = mostrarLocalStorage();
+
+    productosExistentes["productos"].forEach(element => {
+        carritoDeCompras.agregarProducto(element);
+    });
+
+}
