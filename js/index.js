@@ -84,6 +84,11 @@ function agregarAlCarrito(idProducto){
     cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos(); 
     tuTotalCantidad.innerText = carritoDeCompras.cantidadDeProductos(); 
     
+    imprimirCarrito()
+
+}
+
+function imprimirCarrito(){
     let contenedorItemProducto = document.querySelector("#contenedorItemCarrito");
 
     let misProductos = carritoDeCompras.devolverProductos();
@@ -142,8 +147,8 @@ function mostrarModalDetalle(idProd){
 
 //actualizar
 function actualizarLocalStorage() {
-    // localStorage.setItem("productosCarrito", JSON.stringify(carritoDeCompras.devolverProductos()));
-    localStorage.setItem("productosCarrito", JSON.stringify(carritoDeCompras));
+    localStorage.setItem("productosCarrito", JSON.stringify(carritoDeCompras.devolverProductos()));
+    //localStorage.setItem("productosCarrito", JSON.stringify(carritoDeCompras));
 }
 
 function mostrarLocalStorage() {
@@ -173,12 +178,16 @@ document.querySelector("select").addEventListener("change", (e) => {
 
 mostrarTodosLosProductos(arregloProductos);
 
-if(mostrarLocalStorage() != null) {
+if(mostrarLocalStorage() != null && mostrarLocalStorage() != undefined) {
 
     let productosExistentes = mostrarLocalStorage();
 
-    productosExistentes["productos"].forEach(element => {
-        carritoDeCompras.agregarProducto(element);
+    productosExistentes.forEach((p) => {
+        let productoObject = new Producto(p.nombre, p.descripcion, p.precio, p.urlImagen, p.categoria, p.id,p.descripcionlarga);
+        carritoDeCompras.agregarProducto(productoObject);
     });
-
+    cantidadDeProductos.innerText = carritoDeCompras.cantidadDeProductos()
+    totalCompra ()
+    tuTotalCantidad.innerText = carritoDeCompras.cantidadDeProductos(); 
+    imprimirCarrito()
 }
