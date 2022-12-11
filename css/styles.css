@@ -142,6 +142,10 @@ textarea {
     overflow-y: scroll;
 }
 
+#tarjetaDatos{
+    display: none;
+}
+
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {}

@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg bg-violet-gradient text-light ">
         <div class="container-xl container-fluid ">
             <div class="align-self-start ">
-                <a class="navbar-brand mt-2 p-2 " href="/index.html">
+                <a class="navbar-brand mt-2 p-2 " href="./index.html">
                     <img src="./img/logo.png" alt="Logo Dhara" class="d-inline-block align-text-top m-2" id="logo">
                     <h1 class="d-none">Dhara</h1>
                 </a>
@@ -55,7 +55,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end text-end p-2" id="navbarNavAltMarkup">
                         <div class="navbar-nav ">
-                            <a class="nav-link active text-light" aria-current="page" href="/index.html">Inicio</a>
+                            <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
                             <a class="nav-link text-light" href="#nosotros">Nosotros</a>
                             <a class="nav-link text-light" href="#productos">Productos</a>
                             <a class="nav-link text-light" href="#tienda">Tienda</a>
@@ -83,16 +83,16 @@
                     </div>
                     <div class="col-sm-12 col-lg-7 d-flex flex-column">
                         <div class="form-check">
-                            <input class="form-check-input mt-4" type="radio" name="flexRadioDefault"
-                                id="flexRadioMercadoPago">
+                            <input class="form-check-input mt-4" type="radio"  onclick="ocultarMostrarTarjeta('ocultar');" name="flexRadioDefault"
+                                id="flexRadioMercadoPago" checked>
                             <label class="form-check-label" for="flexRadioMercadoPago">
                                 Mercado Pago
                             </label>
                             <img src="./img/pago-mp.jpg" alt="Mercado Pago">
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input mt-4" type="radio" name="flexRadioDefault"
-                                id="flexRadioTarjetaCredito" checked>
+                            <input class="form-check-input mt-4" type="radio"  onclick="ocultarMostrarTarjeta('mostrar');" name="flexRadioDefault"
+                                id="flexRadioTarjetaCredito">
                             <label class="form-check-label" for="flexRadioTarjetaCredito">
                                 Tarjeta de Crédito
                             </label>
@@ -100,7 +100,7 @@
                             <img src="./img/pago-master.jpg" alt="Master Card">
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input mt-4" type="radio" name="flexRadioDefault"
+                            <input class="form-check-input mt-4" type="radio"  onclick="ocultarMostrarTarjeta('ocultar');" name="flexRadioDefault"
                                 id="flexRadioEfectivo">
                             <label class="form-check-label" for="flexRadioEfectivo">
                                 Efectivo / Transferencia
@@ -110,106 +110,115 @@
                             <img src="./img/pago-transfer.jpg" alt="Mercado Pago">
                         </div>
                     </div>
-                    <div class="container">
+                    
+                    
+                    
+                    
+                    <div class="container" id="tarjetaDatos">
                         <h3>Ingresá los datos de tu tarjeta</h3>
                         <div class="row">
                             <div class="col-12">
                                 <label class="form-label" for="inputtarjeta">Número *</label>
-                                <input class="form-control border-dark-violet" type="number" name="inputtarjeta"
+                                <input autocomplete="off" onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputtarjeta"
                                     id="inputtarjeta" placeholder="xxxx xxxx xxxx xxxx" aria-describedby="d-tarjeta"
                                     required>
+                                <span id="text"></span>
                                 <p class="form-text" id="d-tarjeta">Sin espacios</p>
                             </div>
                             <div class="col-6">
                                 <label class="form-label" for="inputvto">Vencimiento *</label>
-                                <input class="form-control border-dark-violet" type="number" name="inputvto"
+                                <input autocomplete="off" onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputvto"
                                     id="inputvto" placeholder="xx / xx" aria-describedby="d-vencimiento" required>
+                                <span id="text"></span>
                             </div>
                             <div class="col-6">
                                 <label class="form-label" for="inputCodigo">Cod. de Seguridad *</label>
-                                <input class="form-control border-dark-violet" type="number" name="inputCodigo"
+                                <input autocomplete="off" onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputCodigo"
                                     id="inputCodigo" placeholder="XXX" aria-describedby="d-codigo" required>
+                                <span id="text"></span>
                             </div>
                             <div class="col-12 pt-4">
                                 <label for="inputNombreTarjeta" class="form-label">Nombre como figura en la tarjeta *</label>
-                            <input type="text" class="form-control border-dark-violet" id="inputNombreTarjeta"
+                            <input autocomplete="off" type="text" onchange="quitarError(this)" class="form-control border-dark-violet" id="inputNombreTarjeta"
                                 name="inputNombreTarjeta" placeholder="Juan" required>
+                            <span id="text"></span>
                             </div>
                         </div>
                     </div>
-
-
-
-
+                    <div class="col-12 border-bottom border-2 py-2"></div>
                 </div>
 
-                <div class="col-12 border-bottom border-2 py-2"></div>
-                <div class="col-sm-12 col-lg-7 d-flex mt-md-4">
-                    <h2>Datos para facturación</h2>
-                </div>
                 <div class="col-12 col-lg-7 col-xxl-7">
-                    <form class="row g-3" action="#" method="post">
+                    <form class="row g-3" action="#" method="post"  autocomplete="off">
+                        <div class="col-sm-12 col-lg-7 d-flex mt-md-4">
+                            <h2>Datos para facturación</h2>
+                        </div>
                         <div class="col-xxl-6">
                             <label for="inputNombre" class="form-label">Nombre *</label>
-                            <input type="text" class="form-control border-dark-violet" id="inputNombre"
+                            <input autocomplete="off" type="text" onchange="quitarError(this)" class="form-control border-dark-violet" id="inputNombre"
                                 name="inputNombre" placeholder="Juan" required>
+                            <span id="text"></span>
                         </div>
                         <div class="col-xxl-6">
                             <label for="inputApellido" class="form-label">Apellido *</label>
-                            <input type="text" class="form-control border-dark-violet" id="inputApellido"
+                            <input type="text" onchange="quitarError(this)" class="form-control border-dark-violet" id="inputApellido"
                                 name="inputApellido" placeholder="Pérez" required>
+                            <span id="text"></span>
                         </div>
                         <div class="col-xxl-6">
                             <label class="form-label" for="inputdni">DNI *</label>
-                            <input class="form-control border-dark-violet" type="number" name="inputdni" id="inputdni"
+                            <input onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputdni" id="inputdni"
                                 placeholder="12345678" aria-describedby="d-dni" required>
+                            <span id="text"></span>
                             <p class="form-text" id="d-dni">Sin puntos ni espacios</p>
                         </div>
                         <div class="col-xxl-6">
                             <label for="inputEmail" class="form-label">Email *</label>
-                            <input type="email" class="form-control border-dark-violet" id="inputEmail"
+                            <input type="email" onchange="quitarError(this)" class="form-control border-dark-violet" id="inputEmail"
                                 name="inputEmail" aria-describedby="d-email" required>
+                            <span id="text"></span>
                             <p class="form-text" id="d-email">emaildeejemplo@hotmail.com</p>
                         </div>
                         <div class="col-xxl-6">
                             <label class="form-label" for="inputelefono">Teléfono *</label>
-                            <input class="form-control border-dark-violet" type="number" name="inputelefono"
+                            <input onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputelefono"
                                 id="inputelefono" placeholder="+ 54 9 11 xxxx xxxx " required>
+                            <span id="text"></span>
                         </div>
                         <div class="col-12 border-bottom border-2 py-2"></div>
                         <div class="col-sm-12 col-lg-7 d-flex mt-md-4">
-                            <h2>Datos de envío</h2>
+                            <h2>Datos de envío:  Calle 144 N° 1121 La Plata</h2>
                         </div>
                         <div>
                             <div class="col-sm-12 col-lg-7 d-flex flex-column">
                                 <div class="form-check">
-                                    <input class="form-check-input mt-4" type="radio" name="flexRadioDefault"
+                                    <input class="form-check-input mt-4" onclick="mostrarCostoEnvio(200)" type="radio" name="flexRadioDefault"
                                         id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1">
-                                        Correo Argentino
+                                        Correo Argentino: $200
                                     </label>
                                     <img src="./img/correo-arg.jpg" alt="Correo Argentino">
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input mt-4" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault2" checked>
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                        Correo Privado
+                                    <input class="form-check-input mt-4" onclick="mostrarCostoEnvio(500)" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2" >
+                                    <label class="form-check-label"  for="flexRadioDefault2">
+                                        Correo Privado: $500
                                     </label>
                                     <img src="./img/correo-priv.jpg" alt="Correo Privado">
 
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input mt-4" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        Acordar con el vendedor
+                                    <input class="form-check-input mt-4" onclick="mostrarCostoEnvio(0)" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1" checked>
+                                    <label class="form-check-label"  for="flexRadioDefault1">
+                                        Acordar con el vendedor: $0
                                     </label>
                                     <img src="./img/envio-acordar.jpg" alt="  Acordar con el vendedor">
                                 </div>
                             </div>
 
-                            <div class="col-xxl-6">
+                            <!-- <div class="col-xxl-6">
                                 <label for="inputDomicilio" class="form-label">Domicilio *</label>
                                 <input type="text" class="form-control border-dark-violet" id="inputDomicilio"
                                     name="inputDomicilio" placeholder="Av. Corrientes" required>
@@ -229,27 +238,28 @@
                                     (opcional)</label>
                                 <textarea class="form-control border-dark-violet" id="inputComentario"
                                     name="inputComentario" rows="3"></textarea>
-                            </div>
+                            </div> -->
                             <div class="col-12 border-bottom border-2 py-2"></div>
                             <div class="container py-5">
                                 <div>
                                     <h2>Resúmen de tu compra</h2>
-                                    <ul>
+                                    <ul id="listaCarrito">
+
                                     </ul>
                                     <p class="h6"><b>Cantidad de productos: </b><span id="tuTotalCantidad"></span>
                                     </p>
                                     <div class="col-12 border-bottom border-2 py-2 mb-2"></div>
-                                    <p class="h6"><b>Sub Total:</b></p>
+                                    <p class="h6"><b>Sub Total:</b><span id="valorSubtotalCompra"></span></p>
                                     <div class="col-12 border-bottom border-2 py-2 mb-2"></div>
-                                    <p class="h6"><b>Costo de Envío:</b></p>
+                                    <p class="h6"><b>Costo de Envío:</b><span id="valorEnvio"></span> </p>
                                     <div class="col-12 border-bottom border-2 py-2 mb-2"></div>
-                                    <p class="h6"><b>Total:</b></p>
+                                    <p class="h6"><b>Total:</b><span id="valorTotalCompra"></span></p>
                                 </div>
 
                             </div>
 
                             <div class="col-xxl-12">
-                                <button type="submit" class="btn  shadow-sm btn-violet-gradient">Finalizar
+                                <button type="submit" onclick="validarForm();" class="btn  shadow-sm btn-violet-gradient">Finalizar
                                     compra</button>
                             </div>
                     </form>
@@ -387,6 +397,8 @@
     <script src="./js/CarritoClass.js"></script>
     <script src="./js/ProductoClass.js"></script>
     <script src="./js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="./js/checkout.js"></script>
 </body>
 
 </html>

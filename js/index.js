@@ -156,6 +156,7 @@ function mostrarLocalStorage() {
 }
 
 
+
 document.querySelector("select").addEventListener("change", (e) => {
     
     let categoria = e.target.value;
@@ -175,7 +176,6 @@ document.querySelector("select").addEventListener("change", (e) => {
 
 
 
-
 mostrarTodosLosProductos(arregloProductos);
 
 if(mostrarLocalStorage() != null && mostrarLocalStorage() != undefined) {
@@ -191,3 +191,7 @@ if(mostrarLocalStorage() != null && mostrarLocalStorage() != undefined) {
     tuTotalCantidad.innerText = carritoDeCompras.cantidadDeProductos(); 
     imprimirCarrito()
 }
+
+
+
+
