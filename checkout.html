@@ -121,27 +121,27 @@
                                 <label class="form-label" for="inputtarjeta">Número *</label>
                                 <input autocomplete="off" onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputtarjeta"
                                     id="inputtarjeta" placeholder="xxxx xxxx xxxx xxxx" aria-describedby="d-tarjeta"
-                                    required>
+                                >
                                 <span id="text"></span>
                                 <p class="form-text" id="d-tarjeta">Sin espacios</p>
                             </div>
                             <div class="col-6">
                                 <label class="form-label" for="inputvto">Vencimiento *</label>
                                 <input autocomplete="off" onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputvto"
-                                    id="inputvto" placeholder="xx / xx" aria-describedby="d-vencimiento" required minlength="5">
+                                    id="inputvto" placeholder="xx / xx" aria-describedby="d-vencimiento" minlength="5">
                                 <span id="text"></span>
                                 <p class="form-text" id="d-vencimiento">Respetando el formato mes/año. Ej: 03/23</p>
                             </div>
                             <div class="col-6">
                                 <label class="form-label" for="inputCodigo">Cod. de Seguridad *</label>
                                 <input autocomplete="off" onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputCodigo"
-                                    id="inputCodigo" placeholder="XXX" aria-describedby="d-codigo" required minlength="3">
+                                    id="inputCodigo" placeholder="XXX" aria-describedby="d-codigo" minlength="3">
                                 <span id="text"></span>
                             </div>
                             <div class="col-12 pt-4">
                                 <label for="inputNombreTarjeta" class="form-label">Nombre como figura en la tarjeta *</label>
                             <input autocomplete="off" type="text" onchange="quitarError(this)" class="form-control border-dark-violet" id="inputNombreTarjeta"
-                                name="inputNombreTarjeta" placeholder="Juan" required>
+                                name="inputNombreTarjeta" placeholder="Juan">
                             <span id="text"></span>
                             </div>
                         </div>
@@ -157,33 +157,33 @@
                         <div class="col-xxl-6">
                             <label for="inputNombre" class="form-label">Nombre *</label>
                             <input autocomplete="off" type="text" onchange="quitarError(this)" class="form-control border-dark-violet" id="inputNombre"
-                                name="inputNombre" placeholder="Juan" required>
+                                name="inputNombre" placeholder="Juan" >
                             <span id="text"></span>
                         </div>
                         <div class="col-xxl-6">
                             <label for="inputApellido" class="form-label">Apellido *</label>
                             <input type="text" onchange="quitarError(this)" class="form-control border-dark-violet" id="inputApellido"
-                                name="inputApellido" placeholder="Pérez" required>
+                                name="inputApellido" placeholder="Pérez" >
                             <span id="text"></span>
                         </div>
                         <div class="col-xxl-6">
                             <label class="form-label" for="inputdni">DNI *</label>
                             <input onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputdni" id="inputdni"
-                                placeholder="12345678" aria-describedby="d-dni" required minlength="8">
+                                placeholder="12345678" aria-describedby="d-dni" minlength="8">
                             <span id="text"></span>
                             <p class="form-text" id="d-dni">Sin puntos ni espacios</p>
                         </div>
                         <div class="col-xxl-6">
                             <label for="inputEmail" class="form-label">Email *</label>
                             <input type="email" onchange="quitarError(this)" class="form-control border-dark-violet" id="inputEmail"
-                                name="inputEmail" aria-describedby="d-email" required>
+                                name="inputEmail" aria-describedby="d-email">
                             <span id="text"></span>
                             <p class="form-text" id="d-email">emaildeejemplo@hotmail.com</p>
                         </div>
                         <div class="col-xxl-6">
                             <label class="form-label" for="inputelefono">Teléfono *</label>
                             <input onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputelefono"
-                                id="inputelefono" placeholder="+ 54 9 11 xxxx xxxx " required>
+                                id="inputelefono" placeholder="+ 54 9 11 xxxx xxxx ">
                             <span id="text"></span>
                         </div>
                         <div class="col-12 border-bottom border-2 py-2"></div>
@@ -220,27 +220,6 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="col-xxl-6">
-                                <label for="inputDomicilio" class="form-label">Domicilio *</label>
-                                <input type="text" class="form-control border-dark-violet" id="inputDomicilio"
-                                    name="inputDomicilio" placeholder="Av. Corrientes" required>
-                            </div>
-                            <div class="col-xxl-6">
-                                <label for="inputNumDomicilio" class="form-label">Número *</label>
-                                <input type="number" class="form-control border-dark-violet" id="inputNumDomicilio"
-                                    name="inputNumDomicilio" placeholder="1234" required>
-                            </div>
-                            <div class="col-xxl-6">
-                                <label for="inputCP" class="form-label">CP *</label>
-                                <input type="number" class="form-control border-dark-violet" id="inputCP" name="inputCP"
-                                    placeholder="xxxx" required>
-                            </div>
-                            <div class="mb-3 col-xxl-12">
-                                <label for="inputComentario" class="form-label">Instrucciones de envío
-                                    (opcional)</label>
-                                <textarea class="form-control border-dark-violet" id="inputComentario"
-                                    name="inputComentario" rows="3"></textarea>
-                            </div> -->
                             <div class="col-12 border-bottom border-2 py-2"></div>
                             <div class="container py-5">
                                 <div>
@@ -261,8 +240,7 @@
                             </div>
 
                             <div class="col-xxl-12">
-                                <button type="submit" onclick="validarForm();" class="btn  shadow-sm btn-violet-gradient">Finalizar
-                                    compra</button>
+                                <input type="submit" onclick="validarForm();" class="btn  shadow-sm btn-violet-gradient" value="Finalizar compra">
                             </div>
                     </form>
                 </div>

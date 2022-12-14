@@ -44,8 +44,13 @@ function ocultarMostrarTarjeta(cadena){
   }
 }
 
+document.querySelector("form").addEventListener("submit", function(event){
+  event.preventDefault()
+});
+
 function validarForm(){
-  
+ 
+
   let banderas = [];
   //datos de la tarjeta de credito si es que fue seleccionado
   if (document.getElementById("flexRadioTarjetaCredito").checked){  
