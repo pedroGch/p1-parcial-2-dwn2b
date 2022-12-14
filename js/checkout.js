@@ -87,11 +87,11 @@ function imprimirCartelTodoOk(){
   actualizarLocalStorage();
   setTimeout(function(){
     window.location.href = 'index.html'
-  },5000)
+  },8000)
 }
 
 function imprimirCartelError(){
-  swal ( "Oops" ,  "parece que te quedaron campos sin comentar!" ,  "error" );
+  swal ( "Oops" ,  "parece que te quedaron campos vacíos!" ,  "error" );
 }
 
 

@@ -128,13 +128,14 @@
                             <div class="col-6">
                                 <label class="form-label" for="inputvto">Vencimiento *</label>
                                 <input autocomplete="off" onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputvto"
-                                    id="inputvto" placeholder="xx / xx" aria-describedby="d-vencimiento" required>
+                                    id="inputvto" placeholder="xx / xx" aria-describedby="d-vencimiento" required minlength="5">
                                 <span id="text"></span>
+                                <p class="form-text" id="d-vencimiento">Respetando el formato mes/año. Ej: 03/23</p>
                             </div>
                             <div class="col-6">
                                 <label class="form-label" for="inputCodigo">Cod. de Seguridad *</label>
                                 <input autocomplete="off" onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputCodigo"
-                                    id="inputCodigo" placeholder="XXX" aria-describedby="d-codigo" required>
+                                    id="inputCodigo" placeholder="XXX" aria-describedby="d-codigo" required minlength="3">
                                 <span id="text"></span>
                             </div>
                             <div class="col-12 pt-4">
@@ -168,7 +169,7 @@
                         <div class="col-xxl-6">
                             <label class="form-label" for="inputdni">DNI *</label>
                             <input onchange="quitarError(this)" class="form-control border-dark-violet" type="number" name="inputdni" id="inputdni"
-                                placeholder="12345678" aria-describedby="d-dni" required>
+                                placeholder="12345678" aria-describedby="d-dni" required minlength="8">
                             <span id="text"></span>
                             <p class="form-text" id="d-dni">Sin puntos ni espacios</p>
                         </div>
