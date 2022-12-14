@@ -88,8 +88,8 @@ function validarInputSoloTexto(element, valor) {
 //si el valor del elemento no es un número se debe agregar un cartel de error en el elemento 
 if (!isNaN(valor)){
   //pintar error
-  let errorText = elemento.nextElementSibling;
-  errorText.innerText = "Debes ingresar sólo números";
+  let errorText = element.nextElementSibling;
+  errorText.innerText = "Debes ingresar sólo texto";
   errorText.style.color = "#f44336";
   return false;
 }
