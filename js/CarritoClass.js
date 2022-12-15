@@ -14,7 +14,6 @@ class Carrito{
     return this.productos;
   }
 
-
   cantidadDeProductos(){
     return this.productos.length;
   }

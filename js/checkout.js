@@ -186,7 +186,15 @@ function validarNumeroTarjeta(elemento, valor) {
   }
 }
 
+function deshabilitarBotonCompra(){
+  if(carrito.cantidadDeProductos() === 0){
+    let botonDesabilitado = document.querySelector('input[type="submit"]');
+    botonDesabilitado.setAttribute('disabled', '');
+  }
+}
+
 cargarCarritoCheckout();
+deshabilitarBotonCompra();
 mostrarSubTotal();
 mostrarCostoEnvio(0);
 mostrarCantidadTotal();
