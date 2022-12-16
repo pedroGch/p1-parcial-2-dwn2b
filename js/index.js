@@ -145,7 +145,9 @@ function mostrarModalDetalle(idProd){
     document.querySelector("#contenedorDescripLargo").append(productoObject.imprimirModal(producto));
 }
 
-//actualizar
+/**
+ * Local Storage
+ */
 function actualizarLocalStorage() {
     localStorage.setItem("productosCarrito", JSON.stringify(carritoDeCompras.devolverProductos()));
     //localStorage.setItem("productosCarrito", JSON.stringify(carritoDeCompras));
@@ -165,14 +167,64 @@ document.querySelector("select").addEventListener("change", (e) => {
     
         contenedorProducto.replaceChildren();
         mostrarTodosLosProductos(filtrado);
+        mostrarOferta(categoria);
         
     }else{
         contenedorProducto.replaceChildren();
         mostrarTodosLosProductos(arregloProductos);
+        mostrarOferta(categoria);
     }
 
     
 });
+
+
+/**
+ * FUNCION PARA MOSTRAR OFERTA (ES LLAMADA CON EL SELECT DE CATEG)
+ */
+
+function mostrarOferta(categoria) {
+
+    document.querySelector("#contenedorOferta").innerText = "";
+
+    let cardOferta = document.createElement("div");
+    cardOferta.className = "card";
+    cardOferta.setAttribute("id", "oferta");
+
+    let cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+
+    switch (categoria) {
+        case "mandala":
+            cardBody.innerText = "¡SOLO POR HOY! 30% de descuento en la segunda unidad llevando dos packs MANDALAS imprimibles, iguales o diferentes";
+            break;
+        case "infantil":
+            cardBody.innerText = "¡SOLO POR HOY! 30% de descuento en la segunda unidad llevando dos packs INFANTILES imprimibles, iguales o diferentes";
+            break;
+
+        case "zentangle":
+            cardBody.innerText = "¡SOLO POR HOY! 30% de descuento en la segunda unidad llevando dos packs ZENTANGLE imprimibles, iguales o diferentes";
+            break;
+    
+        default:
+            cardBody.innerText = "Disfrutá 3 cuotas sin interés en toda la tienda.";
+            break;
+    }
+    
+
+    cardOferta.append(cardBody);
+
+    document.querySelector("#contenedorOferta").append(cardOferta);
+
+    setTimeout(() => {
+
+        document.querySelector("#oferta").remove();
+
+    }, 10000);
+};
+
+
+
 
 
 
